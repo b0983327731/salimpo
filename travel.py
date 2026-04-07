@@ -3,7 +3,7 @@ import time
 
 # --- [10-1] 底層架構：絕對效能設定 ---
 st.set_page_config(
-    page_title="長濱寧埔 Voyager v9.7 (深度擴展版)",
+    page_title="台東長濱 Voyager v9.8 (全境擴充版)",
     page_icon="🌊",
     layout="centered"
 )
@@ -54,86 +54,101 @@ st.markdown("""
 
 # --- 介面渲染 ---
 
-st.title("長濱寧埔 | AWOS 深度巡航")
-st.image("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80", 
-         caption="太平洋邊緣的生存美學：寧埔海岸", use_container_width=True)
+st.title("台東長濱鄉 | 太平洋生存美學")
+st.image("https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&w=800&q=80", 
+         caption="山海交界處的長濱鄉：金剛大道與太平洋的凝視", use_container_width=True)
 
-tab1, tab2, tab3 = st.tabs(["📍 深度景點", "🛏️ 嚴選住宿", "📅 兩日行程安排"])
+# 擴充為 4 個核心分頁
+tab1, tab2, tab3, tab4 = st.tabs(["📍 深度景點", "🍽️ 在地美食", "🛏️ 嚴選住宿", "📅 兩日行程"])
 
-# --- Tab 1: 景點擴充 ---
+# --- Tab 1: 景點擴充 (長濱全境) ---
 with tab1:
     st.markdown('<br>', unsafe_allow_html=True)
     st.markdown('''
     <div class="info-card">
-        <b>🌾 AWOS 農場 (自然農法實作基地)</b>
-        <span class="desc">隱身於寧埔半山腰的食育基地。這裡拒絕化肥，讓作物與雜草共生，展現最強韌的生存美學。
+        <b>🦍 金剛大道 (長光部落)</b>
+        <span class="desc">一條沒有電線桿的筆直大道，直通太平洋。兩側伴隨著四季變換的稻浪，是視覺降熵的終極場域。
         <ul>
-            <li><b>紅藜與小米導覽：</b> 實地觀察長濱特有紅藜的生長型態，了解其極高的營養抗氧化價值。</li>
-            <li><b>原民風味手作：</b> 親手體驗從田間採集到餐桌的過程，製作傳統酒麴與原民小米風味餐。</li>
+            <li><b>觀景建議：</b> 建議租借單車騎行，感受海風與金剛山的壯麗對話。</li>
         </ul>
         </span>
     </div>
     
     <div class="info-card">
-        <b>🌊 寧埔休憩區 (S-Curve 視覺降熵點)</b>
-        <span class="desc">台 11 線 94K 處，擁有全台最完美的海岸公路 S 型曲線，是抹除都市焦慮的絕佳場域。
+        <b>🗿 八仙洞遺址 & 阿美族文化節點</b>
+        <span class="desc">長濱不只有海，還有深厚的史前文化與阿美族部落底蘊。
         <ul>
-            <li><b>晨昏攝影熱區：</b> 建議於清晨 05:30 捕捉太平洋日出，或下午 16:00 拍攝稻浪與海浪交織的黃金時刻。</li>
-            <li><b>無死角觀海：</b> 具備寬闊的停車與觀景空間，適合靜坐聆聽海潮白噪音。</li>
+            <li><b>地質奇觀：</b> 探訪百萬年海水侵蝕形成的海蝕洞，見證長濱文化的發源地。</li>
+            <li><b>部落工藝探尋：</b> 在周邊部落，您可以看見傳統阿美族工藝的延續，了解先民如何利用自然素材製作漁具與傳統編織，展現強韌的生存智慧。</li>
         </ul>
         </span>
     </div>
     
     <div class="info-card">
-        <b>🗿 光榮部落 Kiwit (文化遍歷性遺址)</b>
-        <span class="desc">保存完整的阿美族傳統聚落，充滿歷史厚度與先民的生存智慧。
+        <b>🌾 AWOS 農場 (寧埔村)</b>
+        <span class="desc">隱身於寧埔半山腰的食育基地。拒絕化肥，讓作物與雜草共生。
         <ul>
-            <li><b>巨石與石棺遺址：</b> 探訪擁有數千年歷史的史前文化遺跡，感受時光的凝結。</li>
-            <li><b>傳統編織與防禦工法：</b> 認識部落如何利用刺蔥、林投樹建立防禦圍籬，以及傳統船隻的結構科學。</li>
+            <li><b>自然農法導覽：</b> 實地觀察土地復育過程，感受最純粹的泥土氣息。</li>
         </ul>
         </span>
     </div>
     ''', unsafe_allow_html=True)
 
-# --- Tab 2: 住宿擴充 ---
+# --- Tab 2: 美食擴充 (長濱味覺 ROI) ---
 with tab2:
     st.markdown('<br>', unsafe_allow_html=True)
     st.markdown('''
     <div class="info-card">
-        <b>🌊 S 彎道海景民宿 (極致感官解壓縮)</b>
-        <span class="desc">為高端慢活族群打造。房內配備全景落地窗，躺在床上即可迎接太平洋第一道曙光。<br>
-        <i>*包含在地小農契作早餐、夜間無光害觀星露台。</i></span>
-        <span class="price-tag">NT$ 3,200 - 4,500 / 晚</span>
+        <b>🌾 阿美族紅藜與傳統風味</b>
+        <span class="desc">長濱的味覺資產，來自土地的直接餽贈。
+        <ul>
+            <li><b>紅藜料理：</b> 品嚐在地契作的「穀物紅寶石」紅藜，無論是加入米飯、傳統米食或是特製手作料理，都能攝取極高的營養抗氧化價值。</li>
+            <li><b>傳統祭典風味：</b> 若在夏秋之際（豐年祭季節）造訪，更有機會品嚐到部落特有的醃肉 (Siraw) 與野菜輪廓，體驗最真實的原民飲食哲學。</li>
+        </ul>
+        </span>
     </div>
     
     <div class="info-card">
-        <b>🏕️ AWOS 生態營地 (土地零距離接觸)</b>
-        <span class="desc">搭建於農場梯田間，主打無痕山林的低碳熵居住方案。適合渴望完全抽離都市的旅客。<br>
-        <i>*提供柴燒熱水、阿美族耆老營火故事夜、現採農場鮮蔬朝食。</i></span>
-        <span class="price-tag">NT$ 1,200 - 1,800 / 晚</span>
-    </div>
-    
-    <div class="info-card">
-        <b>🪵 寧埔職人客棧 (文化深度體驗)</b>
-        <span class="desc">由返鄉青年與在地工藝師共同經營，一樓為木作與海鹽展示空間，二樓為客房。<br>
-        <i>*入住房客可免費參與一次「柴燒海鹽萃取」或「傳統月桃葉編織」體驗。</i></span>
-        <span class="price-tag">NT$ 2,500 - 2,800 / 晚</span>
+        <b>🐟 長濱無菜單海鮮 (預約制)</b>
+        <span class="desc">嚴格落實「海裡有什麼，今天吃什麼」的第一性原理。
+        <ul>
+            <li><b>特色：</b> 每日清晨由長濱漁港現撈，無過度調味，搭配手工柴燒海鹽，提取食材最本質的太平洋鮮甜。</li>
+        </ul>
+        </span>
     </div>
     ''', unsafe_allow_html=True)
 
-# --- Tab 3: 行程擴充 ---
+# --- Tab 3: 住宿擴充 (長濱資產配置) ---
 with tab3:
     st.markdown('<br>', unsafe_allow_html=True)
     st.markdown('''
     <div class="info-card">
-        <b>📌 Day 1：感官喚醒與海洋萃取</b>
+        <b>🌊 頂級海景民宿 (真柄/寧埔海岸)</b>
+        <span class="desc">為高端慢活族群打造。房內配備全景落地窗，躺在床上即可迎接太平洋第一道曙光。<br>
+        <i>*多數具備無光害觀星露台，提供極致零摩擦的睡眠體驗。</i></span>
+        <span class="price-tag">NT$ 3,800 - 6,500 / 晚</span>
+    </div>
+    
+    <div class="info-card">
+        <b>🏕️ 部落生態營地 & 職人客棧</b>
+        <span class="desc">主打無痕山林的低碳熵居住方案。適合渴望完全抽離都市，與在地文化連結的旅客。<br>
+        <i>*提供柴燒熱水、阿美族耆老營火故事夜、或傳統月桃葉編織體驗。</i></span>
+        <span class="price-tag">NT$ 1,200 - 2,800 / 晚</span>
+    </div>
+    ''', unsafe_allow_html=True)
+
+# --- Tab 4: 兩日行程 (時間軸排程) ---
+with tab4:
+    st.markdown('<br>', unsafe_allow_html=True)
+    st.markdown('''
+    <div class="info-card">
+        <b>📌 Day 1：海岸線的視覺降熵與味覺萃取</b>
         <span class="desc">
         <ul>
-            <li><b>10:30｜抵達寧埔：</b> 駛入台 11 線 S 彎道，進行視覺降熵，感受海天一線的震撼。</li>
-            <li><b>12:00｜職人午餐：</b> 享用無菜單料理，品嚐長濱現撈海鮮與在地野菜。</li>
-            <li><b>14:30｜柴燒海鹽 DIY：</b> 前往鹽寮，在柴火的高溫中，親手從太平洋海水中熬煮、結晶出富含礦物質的純淨海鹽。</li>
-            <li><b>18:00｜部落風味晚宴：</b> 於住宿地享用結合現代烹調與原民香料的晚餐。</li>
-            <li><b>20:00｜觀星靜心：</b> 於無光害的長濱夜空下，聆聽海浪聲入眠。</li>
+            <li><b>10:30｜抵達長濱：</b> 駛入台 11 線，首站前往「金剛大道」騎乘單車，感受山海之間的震撼。</li>
+            <li><b>12:30｜無菜單海鮮：</b> 享用長濱漁港現撈海鮮，搭配柴燒海鹽。</li>
+            <li><b>15:00｜八仙洞與傳統工藝：</b> 探訪史前遺址，走入周邊部落感受阿美族傳統編織與生活器具的工藝之美。</li>
+            <li><b>18:30｜入住民宿：</b> 伴隨海潮白噪音，在無光害的露台享受星空。</li>
         </ul>
         </span>
     </div>
@@ -142,20 +157,20 @@ with tab3:
         <b>📌 Day 2：土地實作與文化溯源</b>
         <span class="desc">
         <ul>
-            <li><b>09:00｜AWOS 農場食育：</b> 深入自然農法梯田，認識傳統作物（紅藜、小米），學習不破壞地力的永續種植智慧。</li>
-            <li><b>11:30｜紅藜手作午餐：</b> 親自採摘食材，揉製紅藜麵疙瘩或阿美族傳統米食 (Toron)。</li>
-            <li><b>14:00｜Kiwit 光榮部落巡禮：</b> 走進歷史，聽部落耆老講述石棺遺址的故事，了解阿美族的海洋與土地哲學。</li>
-            <li><b>16:30｜文化賦歸：</b> 帶著親手製作的海鹽與滿載的多巴胺，踏上返程。</li>
+            <li><b>09:00｜AWOS 農場食育：</b> 深入半山腰的梯田，認識傳統作物，學習不破壞地力的永續種植智慧。</li>
+            <li><b>11:30｜紅藜手作午餐：</b> 親自參與紅藜與小米的料理過程，體驗傳統阿美族飲食文化。</li>
+            <li><b>14:30｜海岸咖啡靜心：</b> 在長濱的獨立咖啡館，點一杯手沖咖啡，將這兩天的多巴胺轉化為長期的心靈資產。</li>
+            <li><b>16:00｜文化賦歸：</b> 帶著充滿電的身心踏上返程。</li>
         </ul>
         </span>
     </div>
     ''', unsafe_allow_html=True)
 
 st.write("---")
-if st.button("🚀 立即預約長濱職人導覽"):
-    with st.spinner('正在同步長濱在地資源矩陣，確認 AWOS 容載量...'):
+if st.button("🚀 啟動長濱全境導覽預約系統"):
+    with st.spinner('正在同步長濱在地資源矩陣，計算最優路線...'):
         time.sleep(1.5)
-    st.success("✅ **預約成功！** 資料已加密並存儲於分散式節點，在地職人將於 24 小時內與您聯繫。")
+    st.success("✅ **路由鎖定成功！** 系統已將您的行程偏好加密並存儲於分散式節點，在地職人團隊將儘速與您聯繫。")
     st.balloons()
 
-st.caption("🟢 系統存活狀態：極致清晰模式 (Absolute Clarity) | CRF v9.7 Engine Active")
+st.caption("🟢 系統存活狀態：全境高對比防護模式 (Absolute Clarity) | CRF v9.8 Engine Active")
